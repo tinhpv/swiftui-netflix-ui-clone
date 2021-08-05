@@ -27,6 +27,9 @@ struct VButton: View {
         Button(action: { action() }, label: {
             VStack(spacing: 8) {
                 Image(systemName: buttonIcon)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 12, height: 12)
                     .foregroundColor(.white)
                 Text(title)
                     .foregroundColor(.white)

@@ -20,7 +20,7 @@ struct TopButtonsView: View {
                 Spacer()
                 Image(systemName: "tv")
                     .padding(.horizontal, 10)
-                Image(systemName: "person.circle")
+                Image(systemName: "person.crop.rectangle")
             }
             .padding(.horizontal, 20)
             HStack(spacing: 50) {

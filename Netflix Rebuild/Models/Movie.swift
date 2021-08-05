@@ -11,6 +11,11 @@ struct Movie {
     var id: String = UUID().uuidString
     var title: String
     var poster: String
-    
     var categories: [String]
+    var year: Int
+    var rating: String
+    var numberOfEpisodes: Int?
+    
+    var episodes: [Episode]?
+    var similarMovies: [Movie]
 }

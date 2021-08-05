@@ -30,6 +30,9 @@ struct HButton: View {
             HStack {
                 Spacer()
                 Image(systemName: buttonIcon)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 8, height: 8)
                     .padding(.bottom, 3)
                 Text(title)
                     .font(.system(size: 14))
