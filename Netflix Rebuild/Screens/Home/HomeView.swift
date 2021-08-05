@@ -7,6 +7,46 @@
 
 import SwiftUI
 
+struct TopButtonsView: View {
+    var body: some View {
+        VStack(spacing: 15) {
+            HStack {
+                Button(action: {}, label: {
+                    Image("netflix")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 30)
+                })
+                Spacer()
+                Image(systemName: "tv")
+                    .padding(.horizontal, 10)
+                Image(systemName: "person.circle")
+            }
+            .padding(.horizontal, 20)
+            HStack(spacing: 50) {
+                Button(action: {}, label: {
+                    Text("TV Show")
+                        .font(.footnote)
+                })
+                Button(action: {}, label: {
+                    Text("Films")
+                        .font(.footnote)
+                })
+                Button(action: {}, label: {
+                    HStack(spacing: 6) {
+                        Text("Categories")
+                            .font(.footnote)
+                        Image(systemName: "arrowtriangle.down.fill")
+                            .resizable()
+                            .frame(width: 5, height: 5)
+                    }
+                })
+            }
+        }
+    }
+}
+
+
 struct HomeView: View {
     var vm = HomeViewModel()
     
@@ -16,9 +56,11 @@ struct HomeView: View {
             
             ScrollView(showsIndicators: false) {
                 LazyVStack {
-                    TopPreviewView(movie: movie2)
+                    TopButtonsView()
+                    TopPreviewView(movie: movie0)
                         .frame(width: UIScreen.main.bounds.width)
-                        .padding(.top, -70)
+                        .padding(.top, -110)
+                        .zIndex(-1)
                     ForEach(vm.allCategories, id: \.self) { category in
                         VStack {
                             HStack {
@@ -29,8 +71,8 @@ struct HomeView: View {
                                 HStack {
                                     ForEach(vm.getMovies(for: category), id: \.id) { movie in
                                         MovieItemView(movie: movie)
-                                            .frame(width: 100, height: 200)
-                                            .padding(.horizontal, 20)
+                                            .frame(width: 65, height: 140)
+                                            .padding(.horizontal, 14)
                                     }
                                 }
                             })
@@ -47,3 +89,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+

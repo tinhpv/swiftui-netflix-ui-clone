@@ -30,8 +30,7 @@ struct VButton: View {
                     .foregroundColor(.white)
                 Text(title)
                     .foregroundColor(.white)
-                    .font(.system(size: 14))
-                    .bold()
+                    .font(.footnote)
             }
         })
     }
