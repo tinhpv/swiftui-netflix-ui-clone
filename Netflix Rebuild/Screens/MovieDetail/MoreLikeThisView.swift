@@ -29,6 +29,6 @@ struct MoreLikeThisView: View {
 
 struct MoreLikeThisView_Previews: PreviewProvider {
     static var previews: some View {
-        MoreLikeThisView(movies: [movie3, movie6, movie2, movie2, movie2, movie2])
+        MoreLikeThisView(movies: [movie3, movie6, movie2, movie0, movie5, movie10])
     }
 }

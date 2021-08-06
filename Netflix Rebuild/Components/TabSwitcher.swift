@@ -51,7 +51,7 @@ struct TabSwitcher: View {
             case .trailers:
                 TrailersView(trailers: trailerList)
             case .more:
-                MoreLikeThisView(movies: movie.similarMovies)
+                MoreLikeThisView(movies: similarMovies)
             }
         }.foregroundColor(.white)
     }

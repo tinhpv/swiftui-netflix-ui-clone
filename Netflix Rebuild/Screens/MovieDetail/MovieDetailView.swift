@@ -93,7 +93,8 @@ struct MovieDetailView: View {
                         .padding(.vertical, 5)
                         .padding(.horizontal, 15)
                         
-                        TabSwitcher(tabs: [.episodes, .more, .trailers], movie: movie0)
+                        TabSwitcher(tabs: [.episodes, .more, .trailers],
+                                    movie: movie0)
                     }
                 })
             }.foregroundColor(.white)

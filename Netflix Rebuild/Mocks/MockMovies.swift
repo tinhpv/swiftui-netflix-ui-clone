@@ -34,104 +34,93 @@ let trailerList = [
     trailer5
 ]
 
-let similarMovie0 = Movie(title: "Nutcracker",
-                          poster: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/thanksgiving-movies-netflix-nutcracker-and-four-realms-1565024106.jpg",
-                          categories: ["Exciting", "Thrillers", "Horror", "Drama"],
-                          year: 2021,
-                          rating: "TV-MA",
-                          numberOfEpisodes: 10,
-                          similarMovies: [])
-let similarMovie1 = Movie(title: "Silence",
-                          poster: "https://static.rogerebert.com/uploads/movie/movie_poster/the-silence-2019/large_silence-poster.jpg",
-                          categories: ["Exciting", "Thrillers", "Horror", "Drama"],
-                          year: 2021,
-                          rating: "TV-MA",
-                          numberOfEpisodes: 1,
-                          similarMovies: [])
-let similarMovie2 = Movie(title: "White Helmet",
-                          poster: "https://pbs.twimg.com/media/CsCeu-YWYAAYMOJ.jpg",
-                          categories: ["Exciting", "Thrillers", "Horror", "Drama"],
-                          year: 2021,
-                          rating: "TV-MA",
-                          numberOfEpisodes: 5,
-                          similarMovies: [])
-
-
 
 let movie0 = Movie(title: "Hai Phuong",
                    poster: "https://2sao.vietnamnetjsc.vn/images/2018/12/07/21/03/Hai-Phuong-4.JPG",
                    categories: ["Exciting", "Sci-Fi TV", "Action", "Drama"],
                    year: 2018, rating: "TV-MA",
                    numberOfEpisodes: 1,
-                   similarMovies: [similarMovie0, similarMovie1, similarMovie2, similarMovie1, similarMovie2, similarMovie0])
+                   similarMovies: [])
 let movie1 = Movie(title: "The 8th night",
                    poster: "https://k-popped.com/kpopped2012/wp-content/uploads/2021/06/The-8th-Night_Main_Ensemble_Vertical_RGB_PRE_EN-UK-600x889.jpg?0ec627&0ec627",
                    categories: ["Exciting", "Sci-Fi TV", "Action", "Drama"],
                    year: 2018,
                    rating: "TV-MA",
                    numberOfEpisodes: 1,
-                   similarMovies: [similarMovie0, movie0, similarMovie2, similarMovie1, similarMovie2, similarMovie0])
+                   similarMovies: [])
 let movie2 = Movie(title: "Imperial Dreams",
                    poster: "https://www.indiewire.com/wp-content/uploads/2017/09/imperial-dreams-2014.jpg?w=426",
                    categories: ["Exciting", "Thrillers", "Horror", "Drama"],
                    year: 2018, rating: "TV-MA",
                    numberOfEpisodes: 1,
-                   similarMovies: [movie0, similarMovie1, movie1, similarMovie1, similarMovie2, similarMovie0])
+                   similarMovies: [])
 let movie3 = Movie(title: "Marriage Story",
                    poster: "https://i.pinimg.com/originals/d1/3a/d5/d13ad50397ecbb4144d6a714846d0415.png",
                    categories: ["Drama", "Comedy", "Fantasy", "Mystery"],
                    year: 2018,
                    rating: "TV-MA",
                    numberOfEpisodes: 1,
-                   similarMovies: [movie1, similarMovie1, similarMovie2, movie2, similarMovie2, similarMovie0])
+                   similarMovies: [])
 let movie4 = Movie(title: "Bird Box",
                    poster: "https://static1.showtimes.com/poster/660x980/bird-box-netflix-132390.jpg",
                    categories: ["Drama", "Disaster Thriller", "Western", "Crime Thriller"],
                    year: 2018, rating: "TV-MA",
                    numberOfEpisodes: 1,
-                   similarMovies: [similarMovie0, movie1, similarMovie2, movie3, similarMovie2, movie0])
+                   similarMovies: [])
 let movie5 = Movie(title: "Stranger Things",
                    poster: "https://hips.hearstapps.com/digitalspyuk.cdnds.net/17/38/1506062373-stranger-things-goonies-poster.jpg?resize=480:*",
                    categories: ["Drama", "War and Military Action", "Mystery", "Romance"],
                    year: 2018,
                    rating: "TV-MA",
                    numberOfEpisodes: 1,
-                   similarMovies: [similarMovie0, similarMovie1, movie0, similarMovie1, similarMovie2, similarMovie0])
+                   similarMovies: [])
 let movie6 = Movie(title: "Extinction",
                    poster: "https://i.pinimg.com/originals/e2/f8/2b/e2f82b45c8d9ab8857dd9b4109c447de.jpg",
                    categories: ["Drama", "War and Military Action", "Martial Arts Action", "Romance"],
                    year: 2018, rating: "TV-MA",
                    numberOfEpisodes: 1,
-                   similarMovies: [similarMovie0, similarMovie1, similarMovie2, similarMovie1, similarMovie2, similarMovie0])
+                   similarMovies: [])
 let movie7 = Movie(title: "Crash landing on you",
                    poster: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/mv5bmdywndmzndatywjhzi00odvkltllngmtmjm4zja1owi2mjgzxkeyxkfqcgdeqxvymtmxodk2otuat-v1-1581356234.jpg",
                    categories:  ["Drama", "Disaster Thriller", "Western", "Crime Thriller"],
                    year: 2018,
                    rating: "TV-MA",
                    numberOfEpisodes: 1,
-                   similarMovies: [similarMovie0, similarMovie1, similarMovie2, similarMovie1, similarMovie2, similarMovie0])
+                   similarMovies: [])
 let movie8 = Movie(title: "Girl from nowhere",
                    poster: "https://m.media-amazon.com/images/M/MV5BYzZjOTg3MWQtMjE0NC00ZGJhLTg3NzAtNWRlZmY2Y2QwYTYyXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg",
                    categories: ["Exciting", "Sci-Fi TV", "Action", "Drama"],
                    year: 2018,
                    rating: "TV-MA",
                    numberOfEpisodes: 1,
-                   similarMovies: [similarMovie0, similarMovie1, similarMovie2, similarMovie1, similarMovie2, similarMovie0])
+                   similarMovies: [])
 let movie9 = Movie(title: "Vagabond",
                    poster: "https://i.pinimg.com/736x/00/5c/57/005c570b158c5e45fa5601dace1b394d.jpg",
                    categories: ["Drama", "War and Military Action", "Mystery", "Romance"],
                    year: 2018,
                    rating: "TV-MA",
                    numberOfEpisodes: 1,
-                   similarMovies: [similarMovie0, similarMovie1, similarMovie2, similarMovie1, similarMovie2, similarMovie0])
+                   similarMovies: [])
 let movie10 = Movie(title: "Vagabond",
                     poster: "https://i.pinimg.com/736x/00/5c/57/005c570b158c5e45fa5601dace1b394d.jpg",
                     categories:  ["Drama", "War and Military Action", "Martial Arts Action", "Romance"],
                     year: 2018,
                     rating: "TV-MA",
                     numberOfEpisodes: 1,
-                    similarMovies: [similarMovie0, similarMovie1, similarMovie2, similarMovie1, similarMovie2, similarMovie0])
+                    similarMovies: [])
 
+let similarMovies = [
+    movie1,
+    movie2,
+    movie3,
+    movie4,
+    movie5,
+    movie6,
+    movie7,
+    movie8,
+    movie9,
+    movie10
+].shuffled()
 
 let mockMovieList: [Movie] = [
     movie1,
