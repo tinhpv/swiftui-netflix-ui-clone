@@ -51,36 +51,45 @@ struct HomeView: View {
     var vm = HomeViewModel()
     
     var body: some View {
-        ZStack {
-            Color.black.edgesIgnoringSafeArea(.all)
-            
-            ScrollView(showsIndicators: false) {
-                LazyVStack {
-                    TopButtonsView()
-                    TopPreviewView(movie: movie0)
-                        .frame(width: UIScreen.main.bounds.width)
-                        .padding(.top, -110)
-                        .zIndex(-1)
-                    ForEach(vm.allCategories, id: \.self) { category in
-                        VStack {
-                            HStack {
-                                Text(category)
-                                Spacer()
-                            }
-                            ScrollView(.horizontal, showsIndicators: false, content: {
+        NavigationView {
+            ZStack {
+                Color.black.edgesIgnoringSafeArea(.all)
+                
+                ScrollView(showsIndicators: false) {
+                    LazyVStack {
+                        TopButtonsView()
+                        TopPreviewView(movie: movie0)
+                            .frame(width: UIScreen.main.bounds.width)
+                            .padding(.top, -110)
+                            .zIndex(-1)
+                        ForEach(vm.allCategories, id: \.self) { category in
+                            VStack {
                                 HStack {
-                                    ForEach(vm.getMovies(for: category), id: \.id) { movie in
-                                        MovieItemView(movie: movie)
-                                            .frame(width: 65, height: 140)
-                                            .padding(.horizontal, 14)
-                                    }
+                                    Text(category)
+                                    Spacer()
                                 }
-                            })
+                                ScrollView(.horizontal, showsIndicators: false, content: {
+                                    HStack {
+                                        ForEach(vm.getMovies(for: category), id: \.id) { movie in
+                                            NavigationLink(
+                                                destination: MovieDetailView(movie: movie),
+                                                label: {
+                                                    MovieItemView(movie: movie)
+                                                        .frame(width: 65, height: 140)
+                                                        .padding(.horizontal, 14)
+                                                })
+                                        }
+                                    }
+                                })
+                            }
                         }
                     }
                 }
             }
-        }.foregroundColor(.white)
+            .foregroundColor(.white)
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarHidden(true)
+        }
     }
 }
 
