@@ -109,6 +109,35 @@ let movie10 = Movie(title: "Vagabond",
                     numberOfEpisodes: 1,
                     similarMovies: [])
 
+let episode1 = Episode(name: "Pilot",
+                       thumbnailUrlString: "https://64.media.tumblr.com/0ce3c3f06d75cc1730c36fd275e2b8d6/tumblr_o180dzOsen1tcxkqzo2_540.png",
+                       description: "Vix ea recusabo consulatu. Ut putant omnium mandamus nam, vix an habemus accumsan. Pro laudem vocibus no, nec et sint option detracto, at aeque antiopam sea. Gloriatur voluptatum at eos, tation percipitur vel ut, recteque interesset ne per.",
+                       length: 44)
+let episode2 = Episode(name: "Allen",
+                       thumbnailUrlString: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi8OhvepTZn68P_cSgiS3QnzrzMZTim_GQfy-SPTnZgmHb4k2rPsDp6d6C_9N_kwUcJG4&usqp=CAU",
+                       description: "Vix ea recusabo consulatu. Ut putant omnium mandamus nam, vix an habemus accumsan. Pro laudem vocibus no, nec et sint option detracto, at aeque antiopam sea. Gloriatur voluptatum at eos, tation percipitur vel ut, recteque interesset ne per.",
+                       length: 44)
+let episode3 = Episode(name: "Tough",
+                       thumbnailUrlString: "https://tickets.cafilm.org/images/user/cfi_2450/imperialdreams_tkt.jpg",
+                       description: "Vix ea recusabo consulatu. Ut putant omnium mandamus nam, vix an habemus accumsan. Pro laudem vocibus no, nec et sint option detracto, at aeque antiopam sea. Gloriatur voluptatum at eos, tation percipitur vel ut, recteque interesset ne per.",
+                       length: 44)
+let episode4 = Episode(name: "Poison",
+                       thumbnailUrlString: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6wyr2XRU-M6TY4dN4qELd7D2wuqH5AiSWJNzPgh1HR3SK0sgyYMdzFYYLXez02CaGG2s&usqp=CAU",
+                       description: "Vix ea recusabo consulatu. Ut putant omnium mandamus nam, vix an habemus accumsan. Pro laudem vocibus no, nec et sint option detracto, at aeque antiopam sea. Gloriatur voluptatum at eos, tation percipitur vel ut, recteque interesset ne per.",
+                       length: 44)
+let episode5 = Episode(name: "Riots, Drills and the Devil",
+                       thumbnailUrlString: "https://i.ytimg.com/vi/wKpztG_fViI/maxresdefault.jpg",
+                       description: "Vix ea recusabo consulatu. Ut putant omnium mandamus nam, vix an habemus accumsan. Pro laudem vocibus no, nec et sint option detracto, at aeque antiopam sea. Gloriatur voluptatum at eos, tation percipitur vel ut, recteque interesset ne per.",
+                       length: 44)
+
+let episodeList = [
+    episode1,
+    episode2,
+    episode3,
+    episode4,
+    episode5,
+].shuffled()
+
 let similarMovies = [
     movie1,
     movie2,

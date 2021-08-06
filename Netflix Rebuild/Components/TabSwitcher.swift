@@ -47,7 +47,7 @@ struct TabSwitcher: View {
             /* SELECTED VIEW */
             switch currentTab {
             case .episodes:
-                Text("episodes")
+                EpisodesView(episodes: episodeList)
             case .trailers:
                 TrailersView(trailers: trailerList)
             case .more:

@@ -97,7 +97,9 @@ struct MovieDetailView: View {
                                     movie: movie0)
                     }
                 })
-            }.foregroundColor(.white)
+            }
+            .foregroundColor(.white)
+            .padding(.horizontal, 8)
         }
     }
 }
