@@ -18,7 +18,7 @@ struct TrailersView: View {
                                       videoUrl: trailer.videoUrl)
                     Text(trailer.name)
                         .font(.caption)
-                }
+                }.padding(.bottom, 10)
             }
         }
     }

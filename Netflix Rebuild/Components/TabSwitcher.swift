@@ -17,6 +17,9 @@ struct TabSwitcher: View {
     var tabs: [TabType]
     var movie: Movie
     @State private var currentTab: TabType = .episodes
+    @Binding var showSeasonPicker: Bool
+    @Binding var selectedSeason: Int
+    
     let tabTitleFontSize = CGFloat(13)
     
     var body: some View {
@@ -47,7 +50,9 @@ struct TabSwitcher: View {
             /* SELECTED VIEW */
             switch currentTab {
             case .episodes:
-                EpisodesView(episodes: episodeList)
+                EpisodesView(episodes: episodeList,
+                             seasonSelect: $showSeasonPicker,
+                             selectedSeason: $selectedSeason)
             case .trailers:
                 TrailersView(trailers: trailerList)
             case .more:
@@ -62,7 +67,9 @@ struct TabSwitcher_Previews: PreviewProvider {
         ZStack {
             Color.black
             TabSwitcher(tabs: [.episodes, .trailers, .more],
-                        movie: movie4)
+                        movie: movie4,
+                        showSeasonPicker: .constant(false),
+                        selectedSeason: .constant(1))
         }
     }
 }

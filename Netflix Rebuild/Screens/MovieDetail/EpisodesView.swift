@@ -10,12 +10,16 @@ import Kingfisher
 
 struct EpisodesView: View {
     var episodes: [Episode]
+    @Binding var seasonSelect: Bool
+    @Binding var selectedSeason: Int
     
     var body: some View {
         VStack(alignment: .leading) {
-            Button(action: {}, label: {
+            Button(action: {
+                seasonSelect = true
+            }, label: {
                 HStack(spacing: 10) {
-                    Text("Season 1")
+                    Text("Season \(selectedSeason)")
                         .font(.caption)
                     Image(systemName: "chevron.down")
                         .resizable()
@@ -24,6 +28,7 @@ struct EpisodesView: View {
                 }
             })
             .buttonStyle(PlainButtonStyle())
+            .padding(.bottom, 10)
             
             ForEach(episodes, id: \.id) { episode in
                 VStack {
@@ -56,7 +61,7 @@ struct EpisodesView: View {
                     Text(episode.description)
                         .font(.caption)
                 }
-                .padding(.bottom, 8)
+                .padding(.bottom, 15)
             }
         }
         .foregroundColor(.white)
@@ -67,7 +72,9 @@ struct EpisodesView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.black
-            EpisodesView(episodes: episodeList)
+            EpisodesView(episodes: episodeList,
+                         seasonSelect: .constant(false),
+                         selectedSeason: .constant(1))
         }
     }
 }
