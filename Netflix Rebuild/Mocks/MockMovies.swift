@@ -182,3 +182,13 @@ let actionMovie: [Movie] = [
     movie9,
     movie10
 ]
+
+let topSearchFilms: [Movie] = [
+    movie1,
+    movie10,
+    movie9,
+    movie8,
+    movie0,
+    movie4,
+    movie3
+]

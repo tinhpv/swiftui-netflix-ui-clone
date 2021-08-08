@@ -9,7 +9,10 @@ import SwiftUI
 
 struct NewAndHotView: View {
     var body: some View {
-        Text("New and Hot")
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            Text("New and 🔥")
+        }.foregroundColor(.white)
     }
 }
 

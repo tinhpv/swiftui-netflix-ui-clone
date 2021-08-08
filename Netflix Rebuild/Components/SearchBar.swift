@@ -10,7 +10,7 @@ import Introspect
 
 struct SearchBar: View {
     @Binding var text: String
-    @State private var isSearching: Bool = true
+    @State private var isSearching: Bool = false
     
     var body: some View {
         HStack {

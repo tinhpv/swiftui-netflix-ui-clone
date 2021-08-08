@@ -9,7 +9,10 @@ import SwiftUI
 
 struct DownloadView: View {
     var body: some View {
-        Text("Download")
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            Text("Download")
+        }.foregroundColor(.white)
     }
 }
 
