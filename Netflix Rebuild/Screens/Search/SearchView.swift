@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State private var searchTerm: String = ""
+    
     var body: some View {
-        Text("SearchView")
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            VStack {
+                SearchBar(text: $searchTerm)
+                    .frame(height: 35)
+                Spacer()
+            }.padding(.horizontal, 15)
+        }
     }
 }
 
