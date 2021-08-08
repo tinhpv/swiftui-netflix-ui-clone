@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct HeaderButtons: View {
+    let backAction: () -> Void
     var body: some View {
         VStack {
             // Top bar
             HStack {
-                Button(action: {}, label: {
+                Button(action: {
+                    backAction()
+                }, label: {
                     Image(systemName: "chevron.left")
                 })
                 Spacer()
@@ -30,17 +33,16 @@ struct HeaderButtons: View {
 }
 
 struct MovieDetailView: View {
-    var movie: Movie
+    @Binding var movie: Movie?
     @State private var showSeasonPicker: Bool = false
     @State private var selectedSeason: Int = 1
     
     var body: some View {
-        NavigationView {
-            ZStack {
+        ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 ZStack {
                     VStack {
-                        HeaderButtons()
+                        HeaderButtons(backAction: {movie = nil})
                         // Video preview
                         VideoPreviewImage(imageUrl: trailer3.thumbnailUrl,
                                           videoUrl: trailer3.videoUrl)
@@ -137,22 +139,17 @@ struct MovieDetailView: View {
                                     .resizable()
                                     .frame(width: 42, height: 42)
                                     .padding(.bottom, 20)
-                                
                             })
                         }.foregroundColor(.white)
                     }
                 }
-            }
-            .navigationBarTitle("", displayMode: .inline)
-            .navigationBarHidden(true)
         }
-        
     }
 }
 
 struct MovieDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailView(movie: movie0)
+        MovieDetailView(movie: .constant(movie0))
     }
 }
 

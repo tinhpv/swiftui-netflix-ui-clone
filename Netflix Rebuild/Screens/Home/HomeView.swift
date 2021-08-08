@@ -48,54 +48,59 @@ struct TopButtonsView: View {
 
 
 struct HomeView: View {
+    @Binding var navBarHidden: Bool
     var vm = HomeViewModel()
+    @State private var movieDetail: Movie? = nil
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color.black.edgesIgnoringSafeArea(.all)
-                
-                ScrollView(showsIndicators: false) {
-                    LazyVStack {
-                        TopButtonsView()
-                        TopPreviewView(movie: movie0)
-                            .frame(width: UIScreen.main.bounds.width)
-                            .padding(.top, -110)
-                            .zIndex(-1)
-                        ForEach(vm.allCategories, id: \.self) { category in
-                            VStack {
-                                HStack {
-                                    Text(category)
-                                    Spacer()
-                                }
-                                ScrollView(.horizontal, showsIndicators: false, content: {
-                                    HStack {
-                                        ForEach(vm.getMovies(for: category), id: \.id) { movie in
-                                            NavigationLink(
-                                                destination: MovieDetailView(movie: movie),
-                                                label: {
-                                                    MovieItemView(movie: movie)
-                                                        .frame(width: 65, height: 140)
-                                                        .padding(.horizontal, 14)
-                                                })
-                                        }
-                                    }
-                                })
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            ScrollView(showsIndicators: false) {
+                LazyVStack {
+                    TopButtonsView()
+                    TopPreviewView(movie: movie0)
+                        .frame(width: UIScreen.main.bounds.width)
+                        .padding(.top, -110)
+                        .zIndex(-1)
+                    ForEach(vm.allCategories, id: \.self) { category in
+                        VStack {
+                            HStack {
+                                Text(category)
+                                Spacer()
                             }
+                            ScrollView(.horizontal, showsIndicators: false, content: {
+                                HStack {
+                                    ForEach(vm.getMovies(for: category), id: \.id) { movie in
+                                        Button(action: {
+                                            movieDetail = movie
+                                        }, label: {
+                                            MovieItemView(movie: movie)
+                                                .frame(width: 65, height: 140)
+                                                .padding(.horizontal, 14)
+                                        })
+                                    }
+                                }
+                            })
                         }
                     }
                 }
             }
-            .foregroundColor(.white)
-            .navigationBarTitle("", displayMode: .inline)
-            .navigationBarHidden(true)
+            
+            if movieDetail != nil {
+                MovieDetailView(movie: $movieDetail)
+                    .animation(.linear)
+                    .transition(.slide)
+            }
         }
+        .foregroundColor(.white)
+        .animation(.easeInOut)
+        .transition(.scale)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(navBarHidden: .constant(true))
     }
 }
 
